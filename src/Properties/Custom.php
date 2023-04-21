@@ -10,6 +10,6 @@ class Custom extends Property
 
     public function __toString(): string
     {
-        return $custom;
+        return $this->custom;
     }
 }
