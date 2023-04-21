@@ -173,6 +173,13 @@ class Vcard implements Responsable, Stringable
         return $this;
     }
 
+    public function custom(string $custom): self
+    {
+        $this->properties[] = new Custom($custom);
+
+        return $this;
+    }
+
     public function __toString(): string
     {
         return collect([
@@ -182,7 +189,7 @@ class Vcard implements Responsable, Stringable
             $this->hasNameParts() ? "N;CHARSET=UTF-8:{$this->lastName};{$this->firstName};{$this->middleName};{$this->namePrefix};{$this->nameSuffix}" : null,
             array_map('strval', $this->properties),
             sprintf('REV:%s', Carbon::now()->toISOString()),
-            'PRODID:-//Astrotomic vCard',
+            'PRODID:-//Astrotomic vCard',   
             'END:VCARD',
         ])->flatten()->filter()->implode(PHP_EOL);
     }
