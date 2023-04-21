@@ -5,6 +5,7 @@ namespace Astrotomic\Vcard;
 use Astrotomic\ConditionalProxy\HasConditionalCalls;
 use Astrotomic\Vcard\Properties\Adr;
 use Astrotomic\Vcard\Properties\Bday;
+use Astrotomic\Vcard\Properties\Custom;
 use Astrotomic\Vcard\Properties\Email;
 use Astrotomic\Vcard\Properties\Gender;
 use Astrotomic\Vcard\Properties\Kind;
